@@ -15,7 +15,7 @@ def main():
 def gen(**kwargs):
     """Generates action, state and reducer."""
     generate_code(
-      kwargs.get('name'), 
+      kwargs.get('name').capitalize(), 
       kwargs.get('path')
     )
     pass
