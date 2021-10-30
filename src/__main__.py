@@ -10,10 +10,14 @@ def main():
   pass
 
 @main.command()
+@click.argument('name', required=True)
 @click.argument('path', required=False)
 def gen(**kwargs):
     """Generates action, state and reducer."""
-    generate_code(kwargs.get('path'))
+    generate_code(
+      kwargs.get('name'), 
+      kwargs.get('path')
+    )
     pass
 
 if __name__ == '__main__':
