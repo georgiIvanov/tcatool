@@ -1,3 +1,6 @@
+# unit tests
+tests/actualOutput/
+
 #macOS
 .DS_Store
 

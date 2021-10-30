@@ -1,5 +1,5 @@
-from path_builder import PathBuilder
-from models.file_types import FileTypes
+from src.path_builder import PathBuilder
+from src.models.file_types import FileTypes
 
 def generate_action(name, path):
   str = f"""public enum {name}Action: Equatable {{
