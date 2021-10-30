@@ -1,6 +1,6 @@
 import sys
 import click
-from code_gen import generate_code
+from code_generation.code_gen import generate_code
 
 
 @click.group()
