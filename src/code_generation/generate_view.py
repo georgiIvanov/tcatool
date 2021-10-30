@@ -21,7 +21,7 @@ public struct {name}View: View {{
 
 #if DEBUG
 
-struct {name}View_Previews: {name}Provider {{
+struct {name}View_Previews: PreviewProvider {{
     static var previews: some View {{
         return {name}View(
             .init(
