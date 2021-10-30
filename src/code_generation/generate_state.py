@@ -1,4 +1,4 @@
-from utility import create_file
+from path_builder import PathBuilder
 from models.file_types import FileTypes
 
 def generate_state(name, path):
@@ -8,4 +8,4 @@ def generate_state(name, path):
     }}
 }}
 """
-  create_file(name, path, FileTypes.STATE, str)
+  PathBuilder.create_file(name, path, FileTypes.STATE, str)

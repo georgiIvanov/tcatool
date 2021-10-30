@@ -1,4 +1,4 @@
-from utility import create_file
+from path_builder import PathBuilder
 from models.file_types import FileTypes
 
 def generate_view(name, path):
@@ -36,4 +36,4 @@ struct {name}View_Previews: PreviewProvider {{
 
 #endif
 """
-  create_file(name, path, FileTypes.VIEW, str)
+  PathBuilder.create_file(name, path, FileTypes.VIEW, str)

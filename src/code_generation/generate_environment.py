@@ -1,4 +1,4 @@
-from utility import create_file
+from path_builder import PathBuilder
 from models.file_types import FileTypes
 
 def generate_environment(name, path):
@@ -18,4 +18,4 @@ public extension {name}Environment {{
 
 #endif
 """
-  create_file(name, path, FileTypes.ENVIRONMENT, str)
+  PathBuilder.create_file(name, path, FileTypes.ENVIRONMENT, str)

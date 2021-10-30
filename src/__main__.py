@@ -1,6 +1,8 @@
 import sys
 import click
+import os
 from code_generation.code_gen import generate_code
+from path_builder import PathBuilder
 
 
 @click.group()
@@ -14,9 +16,10 @@ def main():
 @click.argument('path', required=False)
 def gen(**kwargs):
     """Generates action, state and reducer."""
+    pathBuilder = PathBuilder(os.getcwd())
     generate_code(
       kwargs.get('name').capitalize(), 
-      kwargs.get('path')
+      pathBuilder.create_path(kwargs.get('path'))
     )
     pass
 

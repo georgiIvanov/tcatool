@@ -1,4 +1,4 @@
-from utility import create_file
+from path_builder import PathBuilder
 from models.file_types import FileTypes
 
 def generate_reducer(name, path):
@@ -10,4 +10,4 @@ let {name.lower()}Reducer = Reducer<
     .none
 }}
 """
-  create_file(name, path, FileTypes.REDUCER, str)
+  PathBuilder.create_file(name, path, FileTypes.REDUCER, str)
