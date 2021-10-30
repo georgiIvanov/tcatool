@@ -10,7 +10,7 @@ class Test_Generate_Action(unittest.TestCase):
     pathAndName = fullPath + "/ProfileAction.swift"
     generate_action("Profile", fullPath)
 
-    expectedOutputPath = build_expected_path("/generate_action/create_action")
+    expectedOutputPath = build_expected_path("/generate_action/create_action.swift")
     self.assertListEqual(
       list(io.open(pathAndName)),
       list(io.open(expectedOutputPath))
