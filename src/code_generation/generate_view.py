@@ -1,5 +1,5 @@
-from src.path_builder import PathBuilder
-from src.models.file_types import FileTypes
+from path_builder import PathBuilder
+from models.file_types import FileTypes
 
 def generate_view(name, path):
   str = f"""import SwiftUI
