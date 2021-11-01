@@ -2,7 +2,7 @@ import sys
 import click
 import os
 from code_generation.code_gen import generate_code
-from path_builder import PathBuilder
+from utilities.path_builder import PathBuilder
 
 
 @click.group()

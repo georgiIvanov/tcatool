@@ -1,5 +1,3 @@
-import os
-from models.file_types import FileTypes
 from code_generation.generate_action import generate_action
 from code_generation.generate_state import generate_state
 from code_generation.generate_reducer import generate_reducer

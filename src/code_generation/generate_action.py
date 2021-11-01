@@ -1,4 +1,4 @@
-from path_builder import PathBuilder
+from utilities.path_builder import PathBuilder
 from models.file_types import FileTypes
 
 def generate_action(name, path):
