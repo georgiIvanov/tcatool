@@ -1,7 +1,7 @@
 import unittest
 import io
 from src.code_generation.generate_state import generate_state
-from src.path_builder import PathBuilder
+from src.utilities.path_builder import PathBuilder
 from tests.test_utilities import build_output_path, build_expected_path
 
 class Test_Generate_Action(unittest.TestCase):
