@@ -52,5 +52,5 @@ class Test_Cli_Commands(unittest.TestCase):
     config = get_config_args(generate_code)
 
     self.assertEqual(config.name, "Foo")
-    self.assertEqual(config.noGen, "aesrv")
+    self.assertEqual(config._noGen, "aesrv")
     self.assertEqual(get_last_part_of_path(config.path), "FooPath")
