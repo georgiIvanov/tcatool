@@ -29,5 +29,5 @@ class PathBuilder:
   @staticmethod
   def create_file(name, path, type, content):
     filePath = os.path.join(path, (name + type.value + ".swift"))
-    f = open(filePath, "w")
-    f.write(content)
+    with open(filePath, "w") as f:
+      f.write(content)
