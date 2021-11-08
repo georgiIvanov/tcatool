@@ -9,7 +9,6 @@ from utilities.path_builder import PathBuilder
 @click.version_option("0.1.0")
 def main():
   """CLI for The Comopsable Architecture"""
-  pass
 
 @main.command()
 @click.argument('name', required=True)
@@ -21,11 +20,10 @@ def gen(**kwargs):
       kwargs.get('name').capitalize(), 
       pathBuilder.create_path(kwargs.get('path'))
     )
-    pass
 
 if __name__ == '__main__':
   args = sys.argv
   if "--help" in args or len(args) == 1:
     print("TCA Tool")
-
-main()
+  
+  main()
