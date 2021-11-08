@@ -1,3 +1,5 @@
+# pylint: disable=W0212
+
 import unittest
 from unittest.mock import patch
 
