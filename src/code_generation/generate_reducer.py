@@ -3,6 +3,9 @@ from models.file_types import FileTypes
 from models.gen_config import GenConfig
 
 def generate_reducer(config: GenConfig):
+  if config.noReducer():
+    return
+
   str = f"""import ComposableArchitecture
 
 let {config.name.lower()}Reducer = Reducer<

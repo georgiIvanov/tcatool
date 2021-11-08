@@ -3,6 +3,9 @@ from models.file_types import FileTypes
 from models.gen_config import GenConfig
 
 def generate_environment(config: GenConfig):
+  if config.noEnvironment():
+    return
+  
   str = f"""public struct {config.name}Environment {{
     public init() {{
         

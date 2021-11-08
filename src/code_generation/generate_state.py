@@ -3,6 +3,9 @@ from models.file_types import FileTypes
 from models.gen_config import GenConfig
 
 def generate_state(config: GenConfig):
+  if config.noState():
+    return
+
   str = f"""public struct {config.name}State: Equatable {{
     public init() {{
 

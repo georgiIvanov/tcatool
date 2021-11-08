@@ -3,6 +3,9 @@ from models.file_types import FileTypes
 from models.gen_config import GenConfig
 
 def generate_view(config: GenConfig):
+  if config.noView():
+    return
+
   str = f"""import SwiftUI
 import ComposableArchitecture
 
