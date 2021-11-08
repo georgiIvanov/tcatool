@@ -1,4 +1,3 @@
-import unittest
 import io
 from src.models.gen_config import GenConfig
 from src.code_generation.generate_environment import generate_environment
@@ -6,30 +5,29 @@ from src.utilities.path_builder import PathBuilder
 from tests.test_utilities import build_output_path, build_expected_path
 from tests.test_case_base import TestCaseBase
 
-class Test_Generate_Action(TestCaseBase):
-  def test_createEnvironment(self):
-    pathBuilder = PathBuilder(build_output_path())
+class TestGenerateEnvironment(TestCaseBase):
+  def test_create_environment(self):
+    path_builder = PathBuilder(build_output_path())
     config = GenConfig(
-      pathBuilder,
+      path_builder,
       {"name": "app", "path": "/App"}
     )
     generate_environment(config)
 
-    actualPath = pathBuilder.create_path("/App") + "/AppEnvironment.swift"
-    expectedOutputPath = build_expected_path("/generate_environment/create_app_environment.swift")
+    actual_path = path_builder.create_path("/App") + "/AppEnvironment.swift"
+    expected_output_path = build_expected_path("/generate_environment/create_app_environment.swift")
     self.assertListEqual(
-      list(io.open(actualPath)),
-      list(io.open(expectedOutputPath))
+      list(io.open(actual_path, encoding="ascii")),
+      list(io.open(expected_output_path, encoding="ascii"))
     )
 
-  def test_noEnvironment(self):
-    pathBuilder = PathBuilder(build_output_path())
+  def test_no_environment(self):
+    path_builder = PathBuilder(build_output_path())
     config = GenConfig(
-      pathBuilder,
+      path_builder,
       {"name": "App_No", "n": "aerv"}
     )
     generate_environment(config)
 
-    actualPath = pathBuilder.create_path() + "/App_NoEnvironment.swift"
-    self.assertIsNotFile(actualPath)
-
+    actual_path = path_builder.create_path() + "/App_NoEnvironment.swift"
+    self.assertIsNotFile(actual_path)

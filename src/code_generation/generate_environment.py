@@ -3,10 +3,10 @@ from models.file_types import FileTypes
 from models.gen_config import GenConfig
 
 def generate_environment(config: GenConfig):
-  if config.noEnvironment():
+  if config.no_environment():
     return
-  
-  str = f"""public struct {config.name}Environment {{
+
+  output = f"""public struct {config.name}Environment {{
     public init() {{
         
     }}
@@ -22,4 +22,4 @@ public extension {config.name}Environment {{
 
 #endif
 """
-  PathBuilder.create_file(config.name, config.path, FileTypes.ENVIRONMENT, str)
+  PathBuilder.create_file(config.name, config.path, FileTypes.ENVIRONMENT, output)

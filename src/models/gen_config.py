@@ -7,19 +7,19 @@ class GenConfig:
     self.name = name[0].upper() + name[1:]
 
     self.path = pathBuilder.create_path(kwargs.get("path"))
-    self._noGen: str = kwargs.get("n") or ""
+    self._no_gen: str = kwargs.get("n") or ""
 
-  def noReducer(self) -> bool:
-    return "r" in self._noGen
+  def no_reducer(self) -> bool:
+    return "r" in self._no_gen
 
-  def noState(self) -> bool:
-    return "s" in self._noGen
+  def no_state(self) -> bool:
+    return "s" in self._no_gen
 
-  def noAction(self) -> bool:
-    return "a" in self._noGen
+  def no_action(self) -> bool:
+    return "a" in self._no_gen
 
-  def noEnvironment(self) -> bool:
-    return "e" in self._noGen
+  def no_environment(self) -> bool:
+    return "e" in self._no_gen
 
-  def noView(self) -> bool:
-    return "v" in self._noGen
+  def no_view(self) -> bool:
+    return "v" in self._no_gen

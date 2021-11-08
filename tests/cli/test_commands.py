@@ -2,11 +2,10 @@ import unittest
 from unittest.mock import patch
 
 from click.testing import CliRunner
-from models.gen_config import GenConfig
 from src.tcatool.main import main
-from test_utilities import get_last_part_of_path, get_config_args
+from tests.test_utilities import get_last_part_of_path, get_config_args
 
-class Test_Cli_Commands(unittest.TestCase):
+class TestCliCommands(unittest.TestCase):
 
   @patch('src.tcatool.main.generate_code')
   def test_gen_default(self, generate_code):
@@ -52,5 +51,5 @@ class Test_Cli_Commands(unittest.TestCase):
     config = get_config_args(generate_code)
 
     self.assertEqual(config.name, "Foo")
-    self.assertEqual(config._noGen, "aesrv")
+    self.assertEqual(config._no_gen, "aesrv")
     self.assertEqual(get_last_part_of_path(config.path), "FooPath")

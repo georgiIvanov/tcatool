@@ -3,10 +3,10 @@ from models.file_types import FileTypes
 from models.gen_config import GenConfig
 
 def generate_view(config: GenConfig):
-  if config.noView():
+  if config.no_view():
     return
 
-  str = f"""import SwiftUI
+  output = f"""import SwiftUI
 import ComposableArchitecture
 
 public struct {config.name}View: View {{
@@ -40,4 +40,4 @@ struct {config.name}View_Previews: PreviewProvider {{
 
 #endif
 """
-  PathBuilder.create_file(config.name, config.path, FileTypes.VIEW, str)
+  PathBuilder.create_file(config.name, config.path, FileTypes.VIEW, output)

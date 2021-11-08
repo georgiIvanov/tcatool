@@ -3,10 +3,10 @@ from models.file_types import FileTypes
 from models.gen_config import GenConfig
 
 def generate_reducer(config: GenConfig):
-  if config.noReducer():
+  if config.no_reducer():
     return
 
-  str = f"""import ComposableArchitecture
+  output = f"""import ComposableArchitecture
 
 let {config.name.lower()}Reducer = Reducer<
     {config.name}State, {config.name}Action, {config.name}Environment
@@ -14,4 +14,4 @@ let {config.name.lower()}Reducer = Reducer<
     .none
 }}
 """
-  PathBuilder.create_file(config.name, config.path, FileTypes.REDUCER, str)
+  PathBuilder.create_file(config.name, config.path, FileTypes.REDUCER, output)
