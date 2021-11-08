@@ -17,7 +17,7 @@ class PathBuilder:
     else:
       return self.baseDir + path
 
-  def create_path(self, path):
+  def create_path(self, path) -> str:
     if path[-1] == "/":
       path = "/" + path[:-1]
 

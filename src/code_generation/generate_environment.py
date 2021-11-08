@@ -1,8 +1,9 @@
 from utilities.path_builder import PathBuilder
 from models.file_types import FileTypes
+from models.gen_config import GenConfig
 
-def generate_environment(name, path):
-  str = f"""public struct {name}Environment {{
+def generate_environment(config: GenConfig):
+  str = f"""public struct {config.name}Environment {{
     public init() {{
         
     }}
@@ -10,12 +11,12 @@ def generate_environment(name, path):
 
 #if DEBUG
 
-public extension {name}Environment {{
-    static var noop: {name}Environment {{
+public extension {config.name}Environment {{
+    static var noop: {config.name}Environment {{
         .init()
     }}
 }}
 
 #endif
 """
-  PathBuilder.create_file(name, path, FileTypes.ENVIRONMENT, str)
+  PathBuilder.create_file(config.name, config.path, FileTypes.ENVIRONMENT, str)

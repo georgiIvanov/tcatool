@@ -1,15 +1,16 @@
 from utilities.path_builder import PathBuilder
 from models.file_types import FileTypes
+from models.gen_config import GenConfig
 
-def generate_view(name, path):
+def generate_view(config: GenConfig):
   str = f"""import SwiftUI
 import ComposableArchitecture
 
-public struct {name}View: View {{
-    let store: Store<{name}State, {name}Action>
-    @ObservedObject var viewStore: ViewStore<{name}State, {name}Action>
+public struct {config.name}View: View {{
+    let store: Store<{config.name}State, {config.name}Action>
+    @ObservedObject var viewStore: ViewStore<{config.name}State, {config.name}Action>
 
-    public init(_ store: Store<{name}State, {name}Action>) {{
+    public init(_ store: Store<{config.name}State, {config.name}Action>) {{
         self.store = store
         self.viewStore = ViewStore(store)
     }}
@@ -21,12 +22,12 @@ public struct {name}View: View {{
 
 #if DEBUG
 
-struct {name}View_Previews: PreviewProvider {{
+struct {config.name}View_Previews: PreviewProvider {{
     static var previews: some View {{
-        return {name}View(
+        return {config.name}View(
             .init(
                 initialState: .init(),
-                reducer: {name.lower()}Reducer,
+                reducer: {config.name.lower()}Reducer,
                 environment: .noop
             )
         )
@@ -36,4 +37,4 @@ struct {name}View_Previews: PreviewProvider {{
 
 #endif
 """
-  PathBuilder.create_file(name, path, FileTypes.VIEW, str)
+  PathBuilder.create_file(config.name, config.path, FileTypes.VIEW, str)
