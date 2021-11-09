@@ -1,6 +1,6 @@
-![Banner](https://i.imgur.com/z3Bgjcg.png)
+![Banner](https://i.imgur.com/gw47EQr.png)
 
-[![GitHub release](https://img.shields.io/github/v/release/georgiIvanov/tcatool?include_prereleases)
+![GitHub release](https://img.shields.io/github/v/release/georgiIvanov/tcatool?include_prereleases)
 
 If you are using [PointFree's](https://www.pointfree.co/) [Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture/) you have already noticed the benefits it brings in terms of testability, conciseness and modularisation.
 
@@ -15,9 +15,11 @@ For those who have already done a project or two with it, you have also probably
 
 ## Usage
 
-The `gen` command takes a **name** with optional **path** and exclusion options (in case you don't want to generate all files).
+The `gen` command takes a **name** with optional **path** and exclusion options **-n** (in case you don't want to generate all files).
 
 By default it creates State, Action, Reducer, Environment and View.
+
+Generated classes will be prefixed with the **name** variable.
 
 ### Example 
 
@@ -27,7 +29,7 @@ Navigate from terminal to your project.
 tcatool gen App
 ```
 
-This will create all 5 files at the current path.
+This will create all 5 files (State, Action, Reducer, Environment and View) at the current path.
 
 ------
 
