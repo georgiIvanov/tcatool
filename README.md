@@ -6,7 +6,7 @@ If you are using [PointFree's](https://www.pointfree.co/) [Composable Architectu
 
 For those who have already done a project or two with it, you have also probably observed how certain files are created again and again, subsequently modified to fit the task at hand.
 
-**tcatool** is a CLI written in Python which aims at automating the drudgery of creating a new module/screen/view with TCA. 
+**tcatool** is a CLI written in Python which aims at automating the drudgery of creating a new module/screen/view with TCA. :snake:
 
 ## Installation via Brew
 
@@ -29,7 +29,7 @@ Navigate from terminal to your project.
 tcatool gen App
 ```
 
-This will create all 5 files (State, Action, Reducer, Environment and View) at the current path.
+This will create 5 files (AppState, AppAction, AppReducer, AppEnvironment and AppView) at the current path.
 
 ------
 
