@@ -12,8 +12,7 @@ class PathBuilder:
   def _assemble_path(self, path):
     if path is None or path == "/" or path == ".":
       return self.base_dir
-    else:
-      return self.base_dir + path
+    return self.base_dir + path
 
   def create_path(self, path: str = None) -> str:
     if path is not None and path[-1] == "/":

@@ -30,5 +30,5 @@ class TestGenerateAction(TestCaseBase):
     generate_action(config)
 
     actual_path = path_builder.create_path() + "/Profile_NoAction.swift"
-    self.assertIsNotFile(actual_path)
+    self.assert_not_file(actual_path)
   

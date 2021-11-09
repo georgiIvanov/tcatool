@@ -30,4 +30,4 @@ class TestGenerateReducer(TestCaseBase):
     generate_reducer(config)
 
     actual_path = path_builder.create_path() + "/SignUp_NoReducer.swift"
-    self.assertIsNotFile(actual_path)
+    self.assert_not_file(actual_path)

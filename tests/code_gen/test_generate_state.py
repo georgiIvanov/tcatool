@@ -30,4 +30,4 @@ class TestGenerateState(TestCaseBase):
     generate_state(config)
 
     actual_path = path_builder.create_path() + "/SignUp_NoState.swift"
-    self.assertIsNotFile(actual_path)
+    self.assert_not_file(actual_path)

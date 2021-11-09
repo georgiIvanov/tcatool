@@ -30,4 +30,4 @@ class TestGenerateEnvironment(TestCaseBase):
     generate_environment(config)
 
     actual_path = path_builder.create_path() + "/App_NoEnvironment.swift"
-    self.assertIsNotFile(actual_path)
+    self.assert_not_file(actual_path)

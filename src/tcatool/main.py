@@ -7,7 +7,7 @@ from utilities.path_builder import PathBuilder
 
 
 @click.group()
-@click.version_option("0.1.0")
+@click.version_option("0.2.0")
 def main():
   """CLI for The Comopsable Architecture"""
 

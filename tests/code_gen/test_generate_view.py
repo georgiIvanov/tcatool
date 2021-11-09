@@ -31,4 +31,4 @@ class TestGenerateView(TestCaseBase):
     generate_view(config)
 
     actual_path = path_builder.create_path() + "/SignUp_NoView.swift"
-    self.assertIsNotFile(actual_path)
+    self.assert_not_file(actual_path)
