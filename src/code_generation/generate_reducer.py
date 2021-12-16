@@ -8,7 +8,7 @@ def generate_reducer(config: GenConfig):
 
   output = f"""import ComposableArchitecture
 
-let {config.name.lower()}Reducer = Reducer<
+public let {config.name.lower()}Reducer = Reducer<
     {config.name}State, {config.name}Action, {config.name}Environment
 > {{ (state, action, env) in
     .none
