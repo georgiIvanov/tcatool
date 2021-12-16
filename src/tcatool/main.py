@@ -17,7 +17,15 @@ def main():
 @click.option('-n', help="""Skip creating file. Use first letter to mark what to exclude.
 Example -nae will drop action and environment from being created.""")
 def gen(**kwargs):
-  """Generates action, state and reducer."""
+  """
+  Generates action, state, reducer, environment and view.
+
+  [OPTION] -n removes component from being generated. (values: a,s,r,e,v)
+
+  NAME the name prefix of components.
+
+  [PATH] optional path where to create the files.
+  """
   path_builder = PathBuilder(os.getcwd())
   config = GenConfig(path_builder, kwargs)
   generate_code(config)
