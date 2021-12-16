@@ -1,6 +1,6 @@
 import ComposableArchitecture
 
-public let signupReducer = Reducer<
+public let signUpReducer = Reducer<
     SignUpState, SignUpAction, SignUpEnvironment
 > { (state, action, env) in
     .none

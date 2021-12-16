@@ -23,3 +23,6 @@ class GenConfig:
 
   def no_view(self) -> bool:
     return "v" in self._no_gen
+
+  def name_camelcase(self) -> str:
+    return ''.join([self.name[0].lower(), self.name[1:]])
