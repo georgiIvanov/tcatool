@@ -19,7 +19,7 @@ public struct {config.name}View: View {{
     }}
 
     public var body: some View {{
-
+        Text("{config.name} View")
     }}
 }}
 

@@ -11,7 +11,7 @@ public struct SignUpView: View {
     }
 
     public var body: some View {
-
+        Text("SignUp View")
     }
 }
 
