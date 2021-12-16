@@ -6,13 +6,16 @@ class PathBuilder:
   """
 
   def __init__(self, base_dir):
-    """Inits PathBuilder with baseDir function"""
+    """Inits PathBuilder with baseDir value"""
     self.base_dir = base_dir
 
   def _assemble_path(self, path):
     if path is None or path == "/" or path == ".":
       return self.base_dir
-    return self.base_dir + path
+    if path[0] == "/":
+      path = path[1:]
+
+    return os.path.join(self.base_dir, path)
 
   def create_path(self, path: str = None) -> str:
     if path is not None and path[-1] == "/":
